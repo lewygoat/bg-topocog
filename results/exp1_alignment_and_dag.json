@@ -1,0 +1,76 @@
+{
+  "skill_standards": {
+    "1x_web_frontend": {
+      "clauses": 257,
+      "aligned_clauses": 257,
+      "top6_edges": 1542,
+      "covered_concepts": 576,
+      "data_literal_share_pct": 5.7
+    },
+    "rk_software_designer": {
+      "clauses": 256,
+      "aligned_clauses": 256,
+      "top6_edges": 1536,
+      "covered_concepts": 576,
+      "data_literal_share_pct": 6.32
+    },
+    "1x_bigdata_dev": {
+      "clauses": 247,
+      "aligned_clauses": 247,
+      "top6_edges": 1482,
+      "covered_concepts": 576,
+      "data_literal_share_pct": 63.37
+    },
+    "combined_3_standards": {
+      "clauses": 760,
+      "aligned_clauses": 760,
+      "top6_edges": 4560,
+      "covered_concepts": 576,
+      "data_literal_share_pct": 25.84
+    },
+    "debiased_no_bigdata": {
+      "clauses": 513,
+      "aligned_clauses": 513,
+      "top6_edges": 3078,
+      "covered_concepts": 576,
+      "data_literal_share_pct": 5.98
+    }
+  },
+  "human_audit_247pairs": {
+    "total_pairs": 247,
+    "observed_agreement_Po": 0.8826,
+    "unweighted_kappa": 0.4432,
+    "linear_weighted_kappa": 0.605,
+    "quadratic_weighted_kappa_w": 0.7501
+  },
+  "bloom_cognitive_distribution": {
+    "L1": 0,
+    "L2": 0,
+    "L3": 121,
+    "L4": 54,
+    "L5": 209,
+    "L6": 192
+  },
+  "kg_topology_scc": {
+    "prereq_adopted": {
+      "edges": 194,
+      "max_scc_raw": 11,
+      "max_scc_after_tarjan_dag": 1
+    },
+    "prereq_predicted": {
+      "edges": 50784,
+      "max_scc_raw": 542,
+      "role": "GNN message passing only (cyclic)"
+    },
+    "chapter_weak": {
+      "edges": 15444,
+      "max_scc_raw": 494,
+      "role": "Weak order audit benchmark"
+    },
+    "eval_prereq_positive": {
+      "edges": 1075,
+      "max_scc_raw": 1,
+      "role": "Isolated gold DAG audit set"
+    }
+  }
+}

@@ -1,0 +1,266 @@
+{
+  "1+X Web前端开发 (Web Frontend)": {
+    "seed_concept": "计算机系统",
+    "in_track_skill_coverage": 0.7882,
+    "prereq_violation_iso": 0.0,
+    "bloom_cognitive_smoothness": 0.3333,
+    "recommended_10step_path": [
+      {
+        "step": 1,
+        "concept_id": 15,
+        "concept_name": "操作系统",
+        "track_skill_weight": 6.839,
+        "bloom_level": 3,
+        "dag_indeg": 0
+      },
+      {
+        "step": 2,
+        "concept_id": 18,
+        "concept_name": "基本输入输出系统",
+        "track_skill_weight": 6.134,
+        "bloom_level": 3,
+        "dag_indeg": 0
+      },
+      {
+        "step": 3,
+        "concept_id": 8,
+        "concept_name": "计算机系统",
+        "track_skill_weight": 9.63,
+        "bloom_level": 5,
+        "dag_indeg": 0
+      },
+      {
+        "step": 4,
+        "concept_id": 4,
+        "concept_name": "数据网络",
+        "track_skill_weight": 2.031,
+        "bloom_level": 5,
+        "dag_indeg": 0
+      },
+      {
+        "step": 5,
+        "concept_id": 5,
+        "concept_name": "数据类型",
+        "track_skill_weight": 1.99,
+        "bloom_level": 5,
+        "dag_indeg": 0
+      },
+      {
+        "step": 6,
+        "concept_id": 514,
+        "concept_name": "下推自动机",
+        "track_skill_weight": 1.175,
+        "bloom_level": 5,
+        "dag_indeg": 0
+      },
+      {
+        "step": 7,
+        "concept_id": 283,
+        "concept_name": "垃圾收集器",
+        "track_skill_weight": 0.917,
+        "bloom_level": 5,
+        "dag_indeg": 0
+      },
+      {
+        "step": 8,
+        "concept_id": 11,
+        "concept_name": "网络体系结构",
+        "track_skill_weight": 8.747,
+        "bloom_level": 6,
+        "dag_indeg": 0
+      },
+      {
+        "step": 9,
+        "concept_id": 0,
+        "concept_name": "数据结构",
+        "track_skill_weight": 3.305,
+        "bloom_level": 6,
+        "dag_indeg": 0
+      },
+      {
+        "step": 10,
+        "concept_id": 1,
+        "concept_name": "服务数据单元",
+        "track_skill_weight": 2.533,
+        "bloom_level": 6,
+        "dag_indeg": 0
+      }
+    ]
+  },
+  "软考软件设计师 (Software Designer)": {
+    "seed_concept": "操作系统",
+    "in_track_skill_coverage": 0.6924,
+    "prereq_violation_iso": 0.0,
+    "bloom_cognitive_smoothness": 0.3333,
+    "recommended_10step_path": [
+      {
+        "step": 1,
+        "concept_id": 15,
+        "concept_name": "操作系统",
+        "track_skill_weight": 6.794,
+        "bloom_level": 3,
+        "dag_indeg": 0
+      },
+      {
+        "step": 2,
+        "concept_id": 18,
+        "concept_name": "基本输入输出系统",
+        "track_skill_weight": 6.094,
+        "bloom_level": 3,
+        "dag_indeg": 0
+      },
+      {
+        "step": 3,
+        "concept_id": 165,
+        "concept_name": "高可用集群",
+        "track_skill_weight": 1.234,
+        "bloom_level": 3,
+        "dag_indeg": 0
+      },
+      {
+        "step": 4,
+        "concept_id": 204,
+        "concept_name": "访问控制列表",
+        "track_skill_weight": 1.168,
+        "bloom_level": 3,
+        "dag_indeg": 0
+      },
+      {
+        "step": 5,
+        "concept_id": 357,
+        "concept_name": "AJAX异步通信",
+        "track_skill_weight": 1.157,
+        "bloom_level": 3,
+        "dag_indeg": 0
+      },
+      {
+        "step": 6,
+        "concept_id": 360,
+        "concept_name": "跨域资源共享",
+        "track_skill_weight": 1.125,
+        "bloom_level": 3,
+        "dag_indeg": 0
+      },
+      {
+        "step": 7,
+        "concept_id": 363,
+        "concept_name": "会话管理",
+        "track_skill_weight": 1.087,
+        "bloom_level": 3,
+        "dag_indeg": 0
+      },
+      {
+        "step": 8,
+        "concept_id": 8,
+        "concept_name": "计算机系统",
+        "track_skill_weight": 9.567,
+        "bloom_level": 5,
+        "dag_indeg": 0
+      },
+      {
+        "step": 9,
+        "concept_id": 11,
+        "concept_name": "网络体系结构",
+        "track_skill_weight": 8.689,
+        "bloom_level": 6,
+        "dag_indeg": 0
+      },
+      {
+        "step": 10,
+        "concept_id": 0,
+        "concept_name": "数据结构",
+        "track_skill_weight": 3.664,
+        "bloom_level": 6,
+        "dag_indeg": 0
+      }
+    ]
+  },
+  "1+X 大数据应用开发 (Big Data Dev)": {
+    "seed_concept": "数据网络",
+    "in_track_skill_coverage": 0.9885,
+    "prereq_violation_iso": 0.0,
+    "bloom_cognitive_smoothness": 0.3333,
+    "recommended_10step_path": [
+      {
+        "step": 1,
+        "concept_id": 15,
+        "concept_name": "操作系统",
+        "track_skill_weight": 2.656,
+        "bloom_level": 3,
+        "dag_indeg": 0
+      },
+      {
+        "step": 2,
+        "concept_id": 4,
+        "concept_name": "数据网络",
+        "track_skill_weight": 22.582,
+        "bloom_level": 5,
+        "dag_indeg": 0
+      },
+      {
+        "step": 3,
+        "concept_id": 5,
+        "concept_name": "数据类型",
+        "track_skill_weight": 22.125,
+        "bloom_level": 5,
+        "dag_indeg": 0
+      },
+      {
+        "step": 4,
+        "concept_id": 8,
+        "concept_name": "计算机系统",
+        "track_skill_weight": 3.741,
+        "bloom_level": 5,
+        "dag_indeg": 0
+      },
+      {
+        "step": 5,
+        "concept_id": 0,
+        "concept_name": "数据结构",
+        "track_skill_weight": 36.74,
+        "bloom_level": 6,
+        "dag_indeg": 0
+      },
+      {
+        "step": 6,
+        "concept_id": 1,
+        "concept_name": "服务数据单元",
+        "track_skill_weight": 28.164,
+        "bloom_level": 6,
+        "dag_indeg": 0
+      },
+      {
+        "step": 7,
+        "concept_id": 2,
+        "concept_name": "大数据",
+        "track_skill_weight": 23.089,
+        "bloom_level": 6,
+        "dag_indeg": 0
+      },
+      {
+        "step": 8,
+        "concept_id": 3,
+        "concept_name": "数据",
+        "track_skill_weight": 22.734,
+        "bloom_level": 6,
+        "dag_indeg": 0
+      },
+      {
+        "step": 9,
+        "concept_id": 10,
+        "concept_name": "数据完整性",
+        "track_skill_weight": 17.533,
+        "bloom_level": 6,
+        "dag_indeg": 0
+      },
+      {
+        "step": 10,
+        "concept_id": 11,
+        "concept_name": "网络体系结构",
+        "track_skill_weight": 3.398,
+        "bloom_level": 6,
+        "dag_indeg": 0
+      }
+    ]
+  }
+}

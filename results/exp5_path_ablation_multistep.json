@@ -1,0 +1,308 @@
+{
+  "n_seed_concepts": 60,
+  "emb_seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "by_length": {
+    "M=5": {
+      "w/o Topo & w/o Cog (Unconstrained GNN Greedy)": {
+        "SkillCov_mean": 0.3453,
+        "SkillCov_std": 0.0171,
+        "Viol_iso_mean": 0.0033,
+        "Viol_iso_std": 0.0046,
+        "Viol_weak_mean": 0.0392,
+        "Viol_weak_std": 0.0076,
+        "FViol_mean": 0.005,
+        "FViol_std": 0.0054,
+        "Bloom_Smooth_mean": 1.2858,
+        "Bloom_Smooth_std": 0.0529
+      },
+      "Unbounded-GNN + TopoSort (T3 Unnormalized)": {
+        "SkillCov_mean": 0.871,
+        "SkillCov_std": 0.0,
+        "Viol_iso_mean": 0.0025,
+        "Viol_iso_std": 0.0023,
+        "Viol_weak_mean": 0.0175,
+        "Viol_weak_std": 0.0123,
+        "FViol_mean": 0.0242,
+        "FViol_std": 0.0139,
+        "Bloom_Smooth_mean": 0.6483,
+        "Bloom_Smooth_std": 0.0197
+      },
+      "w/o Skill Prior (LightGCN + Topo + Cog)": {
+        "SkillCov_mean": 0.2878,
+        "SkillCov_std": 0.0058,
+        "Viol_iso_mean": 0.0,
+        "Viol_iso_std": 0.0,
+        "Viol_weak_mean": 0.0475,
+        "Viol_weak_std": 0.0158,
+        "FViol_mean": 0.0058,
+        "FViol_std": 0.0056,
+        "Bloom_Smooth_mean": 0.6133,
+        "Bloom_Smooth_std": 0.0242
+      },
+      "w/o Cog (BG-GCN + Skill + Topo-Only)": {
+        "SkillCov_mean": 0.871,
+        "SkillCov_std": 0.0,
+        "Viol_iso_mean": 0.0,
+        "Viol_iso_std": 0.0,
+        "Viol_weak_mean": 0.0517,
+        "Viol_weak_std": 0.0127,
+        "FViol_mean": 0.0,
+        "FViol_std": 0.0,
+        "Bloom_Smooth_mean": 0.9333,
+        "Bloom_Smooth_std": 0.0955
+      },
+      "w/o Topo (BG-GCN + Skill + Cog-Only)": {
+        "SkillCov_mean": 0.871,
+        "SkillCov_std": 0.0,
+        "Viol_iso_mean": 0.0083,
+        "Viol_iso_std": 0.0029,
+        "Viol_weak_mean": 0.0525,
+        "Viol_weak_std": 0.026,
+        "FViol_mean": 0.0308,
+        "FViol_std": 0.0109,
+        "Bloom_Smooth_mean": 0.515,
+        "Bloom_Smooth_std": 0.0216
+      },
+      "BG-TopoCog (Full Dual-Constrained)": {
+        "SkillCov_mean": 0.871,
+        "SkillCov_std": 0.0,
+        "Viol_iso_mean": 0.0,
+        "Viol_iso_std": 0.0,
+        "Viol_weak_mean": 0.035,
+        "Viol_weak_std": 0.0037,
+        "FViol_mean": 0.08,
+        "FViol_std": 0.0148,
+        "Bloom_Smooth_mean": 0.3675,
+        "Bloom_Smooth_std": 0.0075
+      }
+    },
+    "M=10": {
+      "w/o Topo & w/o Cog (Unconstrained GNN Greedy)": {
+        "SkillCov_mean": 0.3285,
+        "SkillCov_std": 0.0136,
+        "Viol_iso_mean": 0.0033,
+        "Viol_iso_std": 0.0027,
+        "Viol_weak_mean": 0.0415,
+        "Viol_weak_std": 0.0126,
+        "FViol_mean": 0.0052,
+        "FViol_std": 0.0033,
+        "Bloom_Smooth_mean": 1.2459,
+        "Bloom_Smooth_std": 0.0492
+      },
+      "Unbounded-GNN + TopoSort (T3 Unnormalized)": {
+        "SkillCov_mean": 0.9355,
+        "SkillCov_std": 0.0,
+        "Viol_iso_mean": 0.0067,
+        "Viol_iso_std": 0.0021,
+        "Viol_weak_mean": 0.0385,
+        "Viol_weak_std": 0.0086,
+        "FViol_mean": 0.0504,
+        "FViol_std": 0.0105,
+        "Bloom_Smooth_mean": 0.6089,
+        "Bloom_Smooth_std": 0.0214
+      },
+      "w/o Skill Prior (LightGCN + Topo + Cog)": {
+        "SkillCov_mean": 0.2783,
+        "SkillCov_std": 0.0088,
+        "Viol_iso_mean": 0.0,
+        "Viol_iso_std": 0.0,
+        "Viol_weak_mean": 0.0456,
+        "Viol_weak_std": 0.0104,
+        "FViol_mean": 0.0052,
+        "FViol_std": 0.0046,
+        "Bloom_Smooth_mean": 0.3593,
+        "Bloom_Smooth_std": 0.0204
+      },
+      "w/o Cog (BG-GCN + Skill + Topo-Only)": {
+        "SkillCov_mean": 0.9355,
+        "SkillCov_std": 0.0,
+        "Viol_iso_mean": 0.0,
+        "Viol_iso_std": 0.0,
+        "Viol_weak_mean": 0.0656,
+        "Viol_weak_std": 0.0116,
+        "FViol_mean": 0.0022,
+        "FViol_std": 0.0024,
+        "Bloom_Smooth_mean": 0.7944,
+        "Bloom_Smooth_std": 0.0336
+      },
+      "w/o Topo (BG-GCN + Skill + Cog-Only)": {
+        "SkillCov_mean": 0.9355,
+        "SkillCov_std": 0.0,
+        "Viol_iso_mean": 0.0137,
+        "Viol_iso_std": 0.0058,
+        "Viol_weak_mean": 0.0496,
+        "Viol_weak_std": 0.0061,
+        "FViol_mean": 0.02,
+        "FViol_std": 0.0048,
+        "Bloom_Smooth_mean": 0.2907,
+        "Bloom_Smooth_std": 0.0041
+      },
+      "BG-TopoCog (Full Dual-Constrained)": {
+        "SkillCov_mean": 0.9355,
+        "SkillCov_std": 0.0,
+        "Viol_iso_mean": 0.0,
+        "Viol_iso_std": 0.0,
+        "Viol_weak_mean": 0.0056,
+        "Viol_weak_std": 0.0,
+        "FViol_mean": 0.0796,
+        "FViol_std": 0.0,
+        "Bloom_Smooth_mean": 0.1926,
+        "Bloom_Smooth_std": 0.0
+      }
+    },
+    "M=15": {
+      "w/o Topo & w/o Cog (Unconstrained GNN Greedy)": {
+        "SkillCov_mean": 0.3204,
+        "SkillCov_std": 0.0089,
+        "Viol_iso_mean": 0.0036,
+        "Viol_iso_std": 0.0029,
+        "Viol_weak_mean": 0.0424,
+        "Viol_weak_std": 0.0093,
+        "FViol_mean": 0.0057,
+        "FViol_std": 0.0031,
+        "Bloom_Smooth_mean": 1.2598,
+        "Bloom_Smooth_std": 0.0454
+      },
+      "Unbounded-GNN + TopoSort (T3 Unnormalized)": {
+        "SkillCov_mean": 0.9568,
+        "SkillCov_std": 0.0004,
+        "Viol_iso_mean": 0.009,
+        "Viol_iso_std": 0.0043,
+        "Viol_weak_mean": 0.0598,
+        "Viol_weak_std": 0.0075,
+        "FViol_mean": 0.0421,
+        "FViol_std": 0.0098,
+        "Bloom_Smooth_mean": 0.5643,
+        "Bloom_Smooth_std": 0.0335
+      },
+      "w/o Skill Prior (LightGCN + Topo + Cog)": {
+        "SkillCov_mean": 0.2784,
+        "SkillCov_std": 0.0068,
+        "Viol_iso_mean": 0.0,
+        "Viol_iso_std": 0.0,
+        "Viol_weak_mean": 0.0426,
+        "Viol_weak_std": 0.0064,
+        "FViol_mean": 0.0057,
+        "FViol_std": 0.0036,
+        "Bloom_Smooth_mean": 0.2671,
+        "Bloom_Smooth_std": 0.016
+      },
+      "w/o Cog (BG-GCN + Skill + Topo-Only)": {
+        "SkillCov_mean": 0.957,
+        "SkillCov_std": 0.0,
+        "Viol_iso_mean": 0.0,
+        "Viol_iso_std": 0.0,
+        "Viol_weak_mean": 0.0488,
+        "Viol_weak_std": 0.0036,
+        "FViol_mean": 0.0069,
+        "FViol_std": 0.0031,
+        "Bloom_Smooth_mean": 0.7433,
+        "Bloom_Smooth_std": 0.0238
+      },
+      "w/o Topo (BG-GCN + Skill + Cog-Only)": {
+        "SkillCov_mean": 0.957,
+        "SkillCov_std": 0.0,
+        "Viol_iso_mean": 0.0131,
+        "Viol_iso_std": 0.0034,
+        "Viol_weak_mean": 0.0467,
+        "Viol_weak_std": 0.0076,
+        "FViol_mean": 0.0098,
+        "FViol_std": 0.003,
+        "Bloom_Smooth_mean": 0.2052,
+        "Bloom_Smooth_std": 0.0018
+      },
+      "BG-TopoCog (Full Dual-Constrained)": {
+        "SkillCov_mean": 0.8119,
+        "SkillCov_std": 0.0009,
+        "Viol_iso_mean": 0.0,
+        "Viol_iso_std": 0.0,
+        "Viol_weak_mean": 0.0171,
+        "Viol_weak_std": 0.0053,
+        "FViol_mean": 0.0119,
+        "FViol_std": 0.0019,
+        "Bloom_Smooth_mean": 0.2152,
+        "Bloom_Smooth_std": 0.0013
+      }
+    },
+    "M=20": {
+      "w/o Topo & w/o Cog (Unconstrained GNN Greedy)": {
+        "SkillCov_mean": 0.3132,
+        "SkillCov_std": 0.006,
+        "Viol_iso_mean": 0.003,
+        "Viol_iso_std": 0.0021,
+        "Viol_weak_mean": 0.0446,
+        "Viol_weak_std": 0.0068,
+        "FViol_mean": 0.0049,
+        "FViol_std": 0.0023,
+        "Bloom_Smooth_mean": 1.2442,
+        "Bloom_Smooth_std": 0.0294
+      },
+      "Unbounded-GNN + TopoSort (T3 Unnormalized)": {
+        "SkillCov_mean": 0.9655,
+        "SkillCov_std": 0.0029,
+        "Viol_iso_mean": 0.0081,
+        "Viol_iso_std": 0.0029,
+        "Viol_weak_mean": 0.0558,
+        "Viol_weak_std": 0.0054,
+        "FViol_mean": 0.0482,
+        "FViol_std": 0.0058,
+        "Bloom_Smooth_mean": 0.643,
+        "Bloom_Smooth_std": 0.0361
+      },
+      "w/o Skill Prior (LightGCN + Topo + Cog)": {
+        "SkillCov_mean": 0.2774,
+        "SkillCov_std": 0.005,
+        "Viol_iso_mean": 0.0,
+        "Viol_iso_std": 0.0,
+        "Viol_weak_mean": 0.0419,
+        "Viol_weak_std": 0.0073,
+        "FViol_mean": 0.0051,
+        "FViol_std": 0.0027,
+        "Bloom_Smooth_mean": 0.2342,
+        "Bloom_Smooth_std": 0.0239
+      },
+      "w/o Cog (BG-GCN + Skill + Topo-Only)": {
+        "SkillCov_mean": 0.9677,
+        "SkillCov_std": 0.0,
+        "Viol_iso_mean": 0.0,
+        "Viol_iso_std": 0.0,
+        "Viol_weak_mean": 0.0233,
+        "Viol_weak_std": 0.0035,
+        "FViol_mean": 0.0158,
+        "FViol_std": 0.003,
+        "Bloom_Smooth_mean": 0.7347,
+        "Bloom_Smooth_std": 0.0093
+      },
+      "w/o Topo (BG-GCN + Skill + Cog-Only)": {
+        "SkillCov_mean": 0.9677,
+        "SkillCov_std": 0.0,
+        "Viol_iso_mean": 0.0068,
+        "Viol_iso_std": 0.0024,
+        "Viol_weak_mean": 0.0311,
+        "Viol_weak_std": 0.0034,
+        "FViol_mean": 0.0026,
+        "FViol_std": 0.0012,
+        "Bloom_Smooth_mean": 0.157,
+        "Bloom_Smooth_std": 0.0009
+      },
+      "BG-TopoCog (Full Dual-Constrained)": {
+        "SkillCov_mean": 0.6873,
+        "SkillCov_std": 0.0028,
+        "Viol_iso_mean": 0.0,
+        "Viol_iso_std": 0.0,
+        "Viol_weak_mean": 0.0146,
+        "Viol_weak_std": 0.0036,
+        "FViol_mean": 0.0026,
+        "FViol_std": 0.0011,
+        "Bloom_Smooth_mean": 0.166,
+        "Bloom_Smooth_std": 0.0059
+      }
+    }
+  }
+}

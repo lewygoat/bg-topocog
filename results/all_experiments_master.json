@@ -1,0 +1,1287 @@
+{
+  "mode": "full_run",
+  "timestamp": "2026-11-10 10:32:57",
+  "exp1_alignment_and_dag": {
+    "skill_standards": {
+      "1x_web_frontend": {
+        "clauses": 257,
+        "aligned_clauses": 257,
+        "top6_edges": 1542,
+        "covered_concepts": 576,
+        "data_literal_share_pct": 5.7
+      },
+      "rk_software_designer": {
+        "clauses": 256,
+        "aligned_clauses": 256,
+        "top6_edges": 1536,
+        "covered_concepts": 576,
+        "data_literal_share_pct": 6.32
+      },
+      "1x_bigdata_dev": {
+        "clauses": 247,
+        "aligned_clauses": 247,
+        "top6_edges": 1482,
+        "covered_concepts": 576,
+        "data_literal_share_pct": 63.37
+      },
+      "combined_3_standards": {
+        "clauses": 760,
+        "aligned_clauses": 760,
+        "top6_edges": 4560,
+        "covered_concepts": 576,
+        "data_literal_share_pct": 25.84
+      },
+      "debiased_no_bigdata": {
+        "clauses": 513,
+        "aligned_clauses": 513,
+        "top6_edges": 3078,
+        "covered_concepts": 576,
+        "data_literal_share_pct": 5.98
+      }
+    },
+    "human_audit_247pairs": {
+      "total_pairs": 247,
+      "observed_agreement_Po": 0.8826,
+      "unweighted_kappa": 0.4432,
+      "linear_weighted_kappa": 0.605,
+      "quadratic_weighted_kappa_w": 0.7501
+    },
+    "bloom_cognitive_distribution": {
+      "L1": 0,
+      "L2": 0,
+      "L3": 121,
+      "L4": 54,
+      "L5": 209,
+      "L6": 192
+    },
+    "kg_topology_scc": {
+      "prereq_adopted": {
+        "edges": 194,
+        "max_scc_raw": 11,
+        "max_scc_after_tarjan_dag": 1
+      },
+      "prereq_predicted": {
+        "edges": 50784,
+        "max_scc_raw": 542,
+        "role": "GNN message passing only (cyclic)"
+      },
+      "chapter_weak": {
+        "edges": 15444,
+        "max_scc_raw": 494,
+        "role": "Weak order audit benchmark"
+      },
+      "eval_prereq_positive": {
+        "edges": 1075,
+        "max_scc_raw": 1,
+        "role": "Isolated gold DAG audit set"
+      }
+    }
+  },
+  "exp2_gnn_representation": {
+    "baselines_warm_topk": {
+      "LightGCN (Backbone)": {
+        "NDCG@5": 0.14211,
+        "NDCG@10_mean": 0.1764,
+        "NDCG@10_std": 0.00035,
+        "NDCG@20": 0.20103,
+        "HR@10": 0.86483,
+        "MRR": 0.33121
+      },
+      "BG-GCN (Bounded Sigmoid, Ours)": {
+        "NDCG@5": 0.14168,
+        "NDCG@10_mean": 0.17342,
+        "NDCG@10_std": 0.00043,
+        "NDCG@20": 0.19842,
+        "HR@10": 0.86164,
+        "MRR": 0.32805
+      },
+      "BPR-MF": {
+        "NDCG@5": 0.13429,
+        "NDCG@10_mean": 0.17102,
+        "NDCG@10_std": 0.00129,
+        "NDCG@20": 0.19594,
+        "HR@10": 0.86153,
+        "MRR": 0.31838
+      },
+      "NGCF": {
+        "NDCG@5": 0.13225,
+        "NDCG@10_mean": 0.16927,
+        "NDCG@10_std": 0.00075,
+        "NDCG@20": 0.19416,
+        "HR@10": 0.86081,
+        "MRR": 0.31686
+      },
+      "Most-Popular": {
+        "NDCG@5": 0.12934,
+        "NDCG@10_mean": 0.16554,
+        "NDCG@10_std": 0.0,
+        "NDCG@20": 0.19048,
+        "HR@10": 0.8531,
+        "MRR": 0.31052
+      },
+      "KGAT": {
+        "NDCG@5": 0.12845,
+        "NDCG@10_mean": 0.1655,
+        "NDCG@10_std": 0.00085,
+        "NDCG@20": 0.19017,
+        "HR@10": 0.85532,
+        "MRR": 0.31002
+      },
+      "ConceptGCN": {
+        "NDCG@5": 0.12699,
+        "NDCG@10_mean": 0.16411,
+        "NDCG@10_std": 0.00133,
+        "NDCG@20": 0.18891,
+        "HR@10": 0.85483,
+        "MRR": 0.30833
+      },
+      "ACKRec": {
+        "NDCG@5": 0.12542,
+        "NDCG@10_mean": 0.16263,
+        "NDCG@10_std": 0.00381,
+        "NDCG@20": 0.18759,
+        "HR@10": 0.85224,
+        "MRR": 0.30588
+      }
+    },
+    "variants": {
+      "Dimension-Wise Vector Gate": {
+        "NDCG@10_mean": 0.16418,
+        "NDCG@10_std": 0.00084,
+        "converged_gate": 2.15,
+        "best_epoch": 7.2,
+        "gain_vs_unbounded_pct": -0.84,
+        "loss_recovery_pct": -12.8
+      },
+      "Unbounded-Gate GCN (T3)": {
+        "NDCG@10_mean": 0.16557,
+        "NDCG@10_std": 0.00116,
+        "converged_gate": 3.8,
+        "best_epoch": 4.0,
+        "gain_vs_unbounded_pct": 0.0,
+        "loss_recovery_pct": 0.0
+      },
+      "De-Biased Prior (No-BigData)": {
+        "NDCG@10_mean": 0.16612,
+        "NDCG@10_std": 0.00091,
+        "converged_gate": 3.42,
+        "best_epoch": 4.2,
+        "gain_vs_unbounded_pct": 0.33,
+        "loss_recovery_pct": 5.1
+      },
+      "In-Training L2 Projection": {
+        "NDCG@10_mean": 0.16984,
+        "NDCG@10_std": 0.00062,
+        "converged_gate": 1.42,
+        "best_epoch": 9.2,
+        "gain_vs_unbounded_pct": 2.58,
+        "loss_recovery_pct": 39.4
+      },
+      "Scalar Gate L2 Regularization": {
+        "NDCG@10_mean": 0.17268,
+        "NDCG@10_std": 0.00051,
+        "converged_gate": 0.412,
+        "best_epoch": 11.2,
+        "gain_vs_unbounded_pct": 4.29,
+        "loss_recovery_pct": 65.6
+      },
+      "Bounded Tanh Gate": {
+        "NDCG@10_mean": 0.17314,
+        "NDCG@10_std": 0.00049,
+        "converged_gate": 0.964,
+        "best_epoch": 11.2,
+        "gain_vs_unbounded_pct": 4.57,
+        "loss_recovery_pct": 69.9
+      },
+      "BG-GCN (Bounded Sigmoid, Ours)": {
+        "NDCG@10_mean": 0.17342,
+        "NDCG@10_std": 0.00044,
+        "converged_gate": 0.882,
+        "best_epoch": 11.2,
+        "gain_vs_unbounded_pct": 4.74,
+        "loss_recovery_pct": 72.5
+      }
+    }
+  },
+  "exp3_coldstart_main": {
+    "optimal_hyperparams": {
+      "alpha_skill": 0.62,
+      "beta_gnn": 0.38,
+      "gamma_pop": 0.08
+    },
+    "n_cold_learners_all": 10748,
+    "n_cold_learners_vocational": 3412,
+    "all_cold_10748": {
+      "Random": {
+        "HR@5": 0.0107,
+        "NDCG@5": 0.00442,
+        "HR@10": 0.02633,
+        "NDCG@10": 0.00757,
+        "NDCG@10_se": 0.0005,
+        "HR@15": 0.05164,
+        "NDCG@15": 0.01183,
+        "HR@20": 0.06159,
+        "NDCG@20": 0.01334,
+        "SkillCov@10": 0.045,
+        "TaxCov@10": 0.1262,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 0.8889
+      },
+      "Concept-ID": {
+        "HR@5": 0.01275,
+        "NDCG@5": 0.00428,
+        "HR@10": 0.02838,
+        "NDCG@10": 0.00733,
+        "NDCG@10_se": 0.00045,
+        "HR@15": 0.04233,
+        "NDCG@15": 0.00958,
+        "HR@20": 0.07229,
+        "NDCG@20": 0.01409,
+        "SkillCov@10": 0.0475,
+        "TaxCov@10": 0.6602,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 1.4444
+      },
+      "Prerequisite-Depth": {
+        "HR@5": 0.04922,
+        "NDCG@5": 0.01977,
+        "HR@10": 0.09071,
+        "NDCG@10": 0.02804,
+        "NDCG@10_se": 0.00096,
+        "HR@15": 0.12402,
+        "NDCG@15": 0.03372,
+        "HR@20": 0.15733,
+        "NDCG@20": 0.03888,
+        "SkillCov@10": 0.1781,
+        "TaxCov@10": 0.3495,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 1.3333
+      },
+      "Popularity + Taxonomy Coverage": {
+        "HR@5": 0.06429,
+        "NDCG@5": 0.0222,
+        "HR@10": 0.10467,
+        "NDCG@10": 0.03042,
+        "NDCG@10_se": 0.00093,
+        "HR@15": 0.1658,
+        "NDCG@15": 0.04105,
+        "HR@20": 0.21157,
+        "NDCG@20": 0.04828,
+        "SkillCov@10": 0.1729,
+        "TaxCov@10": 0.6117,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 1.7778
+      },
+      "Most-Popular": {
+        "HR@5": 0.07508,
+        "NDCG@5": 0.02983,
+        "HR@10": 0.11909,
+        "NDCG@10": 0.03879,
+        "NDCG@10_se": 0.00114,
+        "HR@15": 0.15966,
+        "NDCG@15": 0.0459,
+        "HR@20": 0.19911,
+        "NDCG@20": 0.05218,
+        "SkillCov@10": 0.2333,
+        "TaxCov@10": 0.3398,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 1.6667
+      },
+      "KGAT-Cold (Graph Propagation)": {
+        "HR@5": 0.06773,
+        "NDCG@5": 0.02681,
+        "HR@10": 0.12263,
+        "NDCG@10": 0.03819,
+        "NDCG@10_se": 0.00112,
+        "HR@15": 0.16347,
+        "NDCG@15": 0.04519,
+        "HR@20": 0.1992,
+        "NDCG@20": 0.05092,
+        "SkillCov@10": 0.1725,
+        "TaxCov@10": 0.1802,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 1.2957
+      },
+      "Skill-Prior + TopoSort": {
+        "HR@5": 0.06866,
+        "NDCG@5": 0.02609,
+        "HR@10": 0.14579,
+        "NDCG@10": 0.04212,
+        "NDCG@10_se": 0.00112,
+        "HR@15": 0.19204,
+        "NDCG@15": 0.05046,
+        "HR@20": 0.2406,
+        "NDCG@20": 0.05836,
+        "SkillCov@10": 0.6564,
+        "TaxCov@10": 0.5922,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 0.2222
+      },
+      "BG-TopoCog (Ours)": {
+        "HR@5": 0.12849,
+        "NDCG@5": 0.04548,
+        "HR@10": 0.23725,
+        "NDCG@10": 0.06802,
+        "NDCG@10_se": 0.00133,
+        "HR@15": 0.42687,
+        "NDCG@15": 0.10641,
+        "HR@20": 0.54178,
+        "NDCG@20": 0.13047,
+        "SkillCov@10": 0.6458,
+        "TaxCov@10": 0.5865,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 0.1276
+      }
+    },
+    "vocational_cold_3412": {
+      "Random": {
+        "HR@5": 0.01495,
+        "NDCG@5": 0.0057,
+        "HR@10": 0.02872,
+        "NDCG@10": 0.00848,
+        "NDCG@10_se": 0.00095,
+        "HR@15": 0.05657,
+        "NDCG@15": 0.01315,
+        "HR@20": 0.06712,
+        "NDCG@20": 0.01489,
+        "SkillCov@10": 0.045,
+        "TaxCov@10": 0.1262,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 0.8889
+      },
+      "Concept-ID": {
+        "HR@5": 0.01172,
+        "NDCG@5": 0.00406,
+        "HR@10": 0.02403,
+        "NDCG@10": 0.00645,
+        "NDCG@10_se": 0.00078,
+        "HR@15": 0.04162,
+        "NDCG@15": 0.00929,
+        "HR@20": 0.06917,
+        "NDCG@20": 0.01353,
+        "SkillCov@10": 0.0475,
+        "TaxCov@10": 0.6602,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 1.4444
+      },
+      "Prerequisite-Depth": {
+        "HR@5": 0.05422,
+        "NDCG@5": 0.02194,
+        "HR@10": 0.09144,
+        "NDCG@10": 0.02939,
+        "NDCG@10_se": 0.00176,
+        "HR@15": 0.10932,
+        "NDCG@15": 0.03243,
+        "HR@20": 0.1357,
+        "NDCG@20": 0.03636,
+        "SkillCov@10": 0.1781,
+        "TaxCov@10": 0.3495,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 1.3333
+      },
+      "Popularity + Taxonomy Coverage": {
+        "HR@5": 0.06858,
+        "NDCG@5": 0.02329,
+        "HR@10": 0.09848,
+        "NDCG@10": 0.02927,
+        "NDCG@10_se": 0.00161,
+        "HR@15": 0.16852,
+        "NDCG@15": 0.0415,
+        "HR@20": 0.23066,
+        "NDCG@20": 0.05127,
+        "SkillCov@10": 0.1729,
+        "TaxCov@10": 0.6117,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 1.7778
+      },
+      "Most-Popular": {
+        "HR@5": 0.08236,
+        "NDCG@5": 0.03441,
+        "HR@10": 0.11137,
+        "NDCG@10": 0.04036,
+        "NDCG@10_se": 0.00216,
+        "HR@15": 0.14449,
+        "NDCG@15": 0.04611,
+        "HR@20": 0.16647,
+        "NDCG@20": 0.04961,
+        "SkillCov@10": 0.2333,
+        "TaxCov@10": 0.3398,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 1.6667
+      },
+      "KGAT-Cold (Graph Propagation)": {
+        "HR@5": 0.06858,
+        "NDCG@5": 0.02804,
+        "HR@10": 0.09994,
+        "NDCG@10": 0.03429,
+        "NDCG@10_se": 0.00197,
+        "HR@15": 0.12837,
+        "NDCG@15": 0.03923,
+        "HR@20": 0.15445,
+        "NDCG@20": 0.04332,
+        "SkillCov@10": 0.1749,
+        "TaxCov@10": 0.1844,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 1.2864
+      },
+      "Skill-Prior + TopoSort": {
+        "HR@5": 0.1187,
+        "NDCG@5": 0.04558,
+        "HR@10": 0.22362,
+        "NDCG@10": 0.0679,
+        "NDCG@10_se": 0.0025,
+        "HR@15": 0.29103,
+        "NDCG@15": 0.08101,
+        "HR@20": 0.36079,
+        "NDCG@20": 0.09284,
+        "SkillCov@10": 0.6564,
+        "TaxCov@10": 0.5922,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 0.2222
+      },
+      "BG-TopoCog (Ours)": {
+        "HR@5": 0.14361,
+        "NDCG@5": 0.05165,
+        "HR@10": 0.25586,
+        "NDCG@10": 0.07537,
+        "NDCG@10_se": 0.00251,
+        "HR@15": 0.36401,
+        "NDCG@15": 0.0965,
+        "HR@20": 0.44343,
+        "NDCG@20": 0.1109,
+        "SkillCov@10": 0.6485,
+        "TaxCov@10": 0.5886,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 0.1182
+      }
+    }
+  },
+  "exp4_coldstart_sparsity_buckets": {
+    "Extreme Cold (1 interaction)": {
+      "n_learners": 4120,
+      "Most-Popular": {
+        "HR@5": 0.0784,
+        "NDCG@5": 0.03244,
+        "HR@10": 0.11044,
+        "NDCG@10": 0.03902,
+        "NDCG@10_se": 0.00192,
+        "HR@15": 0.14879,
+        "NDCG@15": 0.04557,
+        "HR@20": 0.17549,
+        "NDCG@20": 0.04972,
+        "SkillCov@10": 0.2333,
+        "TaxCov@10": 0.3398,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 1.6667
+      },
+      "KGAT-Cold": {
+        "HR@5": 0.0665,
+        "NDCG@5": 0.02705,
+        "HR@10": 0.09951,
+        "NDCG@10": 0.03358,
+        "NDCG@10_se": 0.00176,
+        "HR@15": 0.13325,
+        "NDCG@15": 0.03935,
+        "HR@20": 0.16262,
+        "NDCG@20": 0.04389,
+        "SkillCov@10": 0.1748,
+        "TaxCov@10": 0.1843,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 1.2877
+      },
+      "Skill-Prior + TopoSort": {
+        "HR@5": 0.10655,
+        "NDCG@5": 0.04073,
+        "HR@10": 0.2034,
+        "NDCG@10": 0.06115,
+        "NDCG@10_se": 0.00217,
+        "HR@15": 0.26505,
+        "NDCG@15": 0.07299,
+        "HR@20": 0.32767,
+        "NDCG@20": 0.08367,
+        "SkillCov@10": 0.6564,
+        "TaxCov@10": 0.5922,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 0.2222
+      },
+      "BG-TopoCog (Ours)": {
+        "HR@5": 0.13471,
+        "NDCG@5": 0.04846,
+        "HR@10": 0.23738,
+        "NDCG@10": 0.07005,
+        "NDCG@10_se": 0.00222,
+        "HR@15": 0.34223,
+        "NDCG@15": 0.09049,
+        "HR@20": 0.41723,
+        "NDCG@20": 0.10391,
+        "SkillCov@10": 0.6485,
+        "TaxCov@10": 0.5886,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 0.1182
+      }
+    },
+    "Shallow Cold (2-3 interactions)": {
+      "n_learners": 3845,
+      "Most-Popular": {
+        "HR@5": 0.07386,
+        "NDCG@5": 0.02881,
+        "HR@10": 0.12588,
+        "NDCG@10": 0.03948,
+        "NDCG@10_se": 0.00189,
+        "HR@15": 0.16645,
+        "NDCG@15": 0.04683,
+        "HR@20": 0.2091,
+        "NDCG@20": 0.05365,
+        "SkillCov@10": 0.2333,
+        "TaxCov@10": 0.3398,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 1.6667
+      },
+      "KGAT-Cold": {
+        "HR@5": 0.06736,
+        "NDCG@5": 0.02541,
+        "HR@10": 0.13056,
+        "NDCG@10": 0.0387,
+        "NDCG@10_se": 0.00181,
+        "HR@15": 0.17399,
+        "NDCG@15": 0.04614,
+        "HR@20": 0.21586,
+        "NDCG@20": 0.05322,
+        "SkillCov@10": 0.172,
+        "TaxCov@10": 0.1794,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 1.2922
+      },
+      "Skill-Prior + TopoSort": {
+        "HR@5": 0.04135,
+        "NDCG@5": 0.01598,
+        "HR@10": 0.10949,
+        "NDCG@10": 0.02956,
+        "NDCG@10_se": 0.00154,
+        "HR@15": 0.14668,
+        "NDCG@15": 0.03591,
+        "HR@20": 0.18596,
+        "NDCG@20": 0.04201,
+        "SkillCov@10": 0.6564,
+        "TaxCov@10": 0.5922,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 0.2222
+      },
+      "BG-TopoCog (Ours)": {
+        "HR@5": 0.10039,
+        "NDCG@5": 0.03498,
+        "HR@10": 0.2,
+        "NDCG@10": 0.05526,
+        "NDCG@10_se": 0.00199,
+        "HR@15": 0.38804,
+        "NDCG@15": 0.09127,
+        "HR@20": 0.50143,
+        "NDCG@20": 0.1114,
+        "SkillCov@10": 0.6453,
+        "TaxCov@10": 0.5855,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 0.1246
+      }
+    },
+    "Moderate Cold (4-6 interactions)": {
+      "n_learners": 1812,
+      "Most-Popular": {
+        "HR@5": 0.07671,
+        "NDCG@5": 0.02892,
+        "HR@10": 0.12141,
+        "NDCG@10": 0.03785,
+        "NDCG@10_se": 0.00267,
+        "HR@15": 0.16336,
+        "NDCG@15": 0.0451,
+        "HR@20": 0.2213,
+        "NDCG@20": 0.05416,
+        "SkillCov@10": 0.2333,
+        "TaxCov@10": 0.3398,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 1.6667
+      },
+      "KGAT-Cold": {
+        "HR@5": 0.07064,
+        "NDCG@5": 0.02849,
+        "HR@10": 0.13962,
+        "NDCG@10": 0.04291,
+        "NDCG@10_se": 0.00286,
+        "HR@15": 0.18543,
+        "NDCG@15": 0.05085,
+        "HR@20": 0.2213,
+        "NDCG@20": 0.05635,
+        "SkillCov@10": 0.17,
+        "TaxCov@10": 0.1758,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 1.3073
+      },
+      "Skill-Prior + TopoSort": {
+        "HR@5": 0.04912,
+        "NDCG@5": 0.01823,
+        "HR@10": 0.10927,
+        "NDCG@10": 0.03094,
+        "NDCG@10_se": 0.00237,
+        "HR@15": 0.1457,
+        "NDCG@15": 0.03697,
+        "HR@20": 0.18543,
+        "NDCG@20": 0.04292,
+        "SkillCov@10": 0.6564,
+        "TaxCov@10": 0.5922,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 0.2222
+      },
+      "BG-TopoCog (Ours)": {
+        "HR@5": 0.14845,
+        "NDCG@5": 0.05248,
+        "HR@10": 0.27704,
+        "NDCG@10": 0.07887,
+        "NDCG@10_se": 0.00342,
+        "HR@15": 0.56402,
+        "NDCG@15": 0.13903,
+        "HR@20": 0.74007,
+        "NDCG@20": 0.17775,
+        "SkillCov@10": 0.6431,
+        "TaxCov@10": 0.585,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 0.1391
+      }
+    },
+    "Near-Warm Cold (7-9 interactions)": {
+      "n_learners": 971,
+      "Most-Popular": {
+        "HR@5": 0.06282,
+        "NDCG@5": 0.02447,
+        "HR@10": 0.12461,
+        "NDCG@10": 0.03689,
+        "NDCG@10_se": 0.00357,
+        "HR@15": 0.17199,
+        "NDCG@15": 0.04513,
+        "HR@20": 0.21833,
+        "NDCG@20": 0.05315,
+        "SkillCov@10": 0.2333,
+        "TaxCov@10": 0.3398,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 1.6667
+      },
+      "KGAT-Cold": {
+        "HR@5": 0.069,
+        "NDCG@5": 0.02816,
+        "HR@10": 0.15757,
+        "NDCG@10": 0.04695,
+        "NDCG@10_se": 0.00406,
+        "HR@15": 0.20906,
+        "NDCG@15": 0.05563,
+        "HR@20": 0.24717,
+        "NDCG@20": 0.06149,
+        "SkillCov@10": 0.1688,
+        "TaxCov@10": 0.1739,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 1.3214
+      },
+      "Skill-Prior + TopoSort": {
+        "HR@5": 0.05252,
+        "NDCG@5": 0.01864,
+        "HR@10": 0.11329,
+        "NDCG@10": 0.03191,
+        "NDCG@10_se": 0.00319,
+        "HR@15": 0.1483,
+        "NDCG@15": 0.03766,
+        "HR@20": 0.19053,
+        "NDCG@20": 0.04447,
+        "SkillCov@10": 0.6564,
+        "TaxCov@10": 0.5922,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 0.2222
+      },
+      "BG-TopoCog (Ours)": {
+        "HR@5": 0.17611,
+        "NDCG@5": 0.06132,
+        "HR@10": 0.30999,
+        "NDCG@10": 0.08971,
+        "NDCG@10_se": 0.00492,
+        "HR@15": 0.68383,
+        "NDCG@15": 0.17304,
+        "HR@20": 0.85994,
+        "NDCG@20": 0.23045,
+        "SkillCov@10": 0.641,
+        "TaxCov@10": 0.5847,
+        "Viol_iso": 0.0,
+        "Bloom_Smooth": 0.1578
+      }
+    }
+  },
+  "exp5_path_ablation_multistep": {
+    "n_seed_concepts": 60,
+    "emb_seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "by_length": {
+      "M=5": {
+        "w/o Topo & w/o Cog (Unconstrained GNN Greedy)": {
+          "SkillCov_mean": 0.3453,
+          "SkillCov_std": 0.0171,
+          "Viol_iso_mean": 0.0033,
+          "Viol_iso_std": 0.0046,
+          "Viol_weak_mean": 0.0392,
+          "Viol_weak_std": 0.0076,
+          "FViol_mean": 0.005,
+          "FViol_std": 0.0054,
+          "Bloom_Smooth_mean": 1.2858,
+          "Bloom_Smooth_std": 0.0529
+        },
+        "Unbounded-GNN + TopoSort (T3 Unnormalized)": {
+          "SkillCov_mean": 0.871,
+          "SkillCov_std": 0.0,
+          "Viol_iso_mean": 0.0025,
+          "Viol_iso_std": 0.0023,
+          "Viol_weak_mean": 0.0175,
+          "Viol_weak_std": 0.0123,
+          "FViol_mean": 0.0242,
+          "FViol_std": 0.0139,
+          "Bloom_Smooth_mean": 0.6483,
+          "Bloom_Smooth_std": 0.0197
+        },
+        "w/o Skill Prior (LightGCN + Topo + Cog)": {
+          "SkillCov_mean": 0.2878,
+          "SkillCov_std": 0.0058,
+          "Viol_iso_mean": 0.0,
+          "Viol_iso_std": 0.0,
+          "Viol_weak_mean": 0.0475,
+          "Viol_weak_std": 0.0158,
+          "FViol_mean": 0.0058,
+          "FViol_std": 0.0056,
+          "Bloom_Smooth_mean": 0.6133,
+          "Bloom_Smooth_std": 0.0242
+        },
+        "w/o Cog (BG-GCN + Skill + Topo-Only)": {
+          "SkillCov_mean": 0.871,
+          "SkillCov_std": 0.0,
+          "Viol_iso_mean": 0.0,
+          "Viol_iso_std": 0.0,
+          "Viol_weak_mean": 0.0517,
+          "Viol_weak_std": 0.0127,
+          "FViol_mean": 0.0,
+          "FViol_std": 0.0,
+          "Bloom_Smooth_mean": 0.9333,
+          "Bloom_Smooth_std": 0.0955
+        },
+        "w/o Topo (BG-GCN + Skill + Cog-Only)": {
+          "SkillCov_mean": 0.871,
+          "SkillCov_std": 0.0,
+          "Viol_iso_mean": 0.0083,
+          "Viol_iso_std": 0.0029,
+          "Viol_weak_mean": 0.0525,
+          "Viol_weak_std": 0.026,
+          "FViol_mean": 0.0308,
+          "FViol_std": 0.0109,
+          "Bloom_Smooth_mean": 0.515,
+          "Bloom_Smooth_std": 0.0216
+        },
+        "BG-TopoCog (Full Dual-Constrained)": {
+          "SkillCov_mean": 0.871,
+          "SkillCov_std": 0.0,
+          "Viol_iso_mean": 0.0,
+          "Viol_iso_std": 0.0,
+          "Viol_weak_mean": 0.035,
+          "Viol_weak_std": 0.0037,
+          "FViol_mean": 0.08,
+          "FViol_std": 0.0148,
+          "Bloom_Smooth_mean": 0.3675,
+          "Bloom_Smooth_std": 0.0075
+        }
+      },
+      "M=10": {
+        "w/o Topo & w/o Cog (Unconstrained GNN Greedy)": {
+          "SkillCov_mean": 0.3285,
+          "SkillCov_std": 0.0136,
+          "Viol_iso_mean": 0.0033,
+          "Viol_iso_std": 0.0027,
+          "Viol_weak_mean": 0.0415,
+          "Viol_weak_std": 0.0126,
+          "FViol_mean": 0.0052,
+          "FViol_std": 0.0033,
+          "Bloom_Smooth_mean": 1.2459,
+          "Bloom_Smooth_std": 0.0492
+        },
+        "Unbounded-GNN + TopoSort (T3 Unnormalized)": {
+          "SkillCov_mean": 0.9355,
+          "SkillCov_std": 0.0,
+          "Viol_iso_mean": 0.0067,
+          "Viol_iso_std": 0.0021,
+          "Viol_weak_mean": 0.0385,
+          "Viol_weak_std": 0.0086,
+          "FViol_mean": 0.0504,
+          "FViol_std": 0.0105,
+          "Bloom_Smooth_mean": 0.6089,
+          "Bloom_Smooth_std": 0.0214
+        },
+        "w/o Skill Prior (LightGCN + Topo + Cog)": {
+          "SkillCov_mean": 0.2783,
+          "SkillCov_std": 0.0088,
+          "Viol_iso_mean": 0.0,
+          "Viol_iso_std": 0.0,
+          "Viol_weak_mean": 0.0456,
+          "Viol_weak_std": 0.0104,
+          "FViol_mean": 0.0052,
+          "FViol_std": 0.0046,
+          "Bloom_Smooth_mean": 0.3593,
+          "Bloom_Smooth_std": 0.0204
+        },
+        "w/o Cog (BG-GCN + Skill + Topo-Only)": {
+          "SkillCov_mean": 0.9355,
+          "SkillCov_std": 0.0,
+          "Viol_iso_mean": 0.0,
+          "Viol_iso_std": 0.0,
+          "Viol_weak_mean": 0.0656,
+          "Viol_weak_std": 0.0116,
+          "FViol_mean": 0.0022,
+          "FViol_std": 0.0024,
+          "Bloom_Smooth_mean": 0.7944,
+          "Bloom_Smooth_std": 0.0336
+        },
+        "w/o Topo (BG-GCN + Skill + Cog-Only)": {
+          "SkillCov_mean": 0.9355,
+          "SkillCov_std": 0.0,
+          "Viol_iso_mean": 0.0137,
+          "Viol_iso_std": 0.0058,
+          "Viol_weak_mean": 0.0496,
+          "Viol_weak_std": 0.0061,
+          "FViol_mean": 0.02,
+          "FViol_std": 0.0048,
+          "Bloom_Smooth_mean": 0.2907,
+          "Bloom_Smooth_std": 0.0041
+        },
+        "BG-TopoCog (Full Dual-Constrained)": {
+          "SkillCov_mean": 0.9355,
+          "SkillCov_std": 0.0,
+          "Viol_iso_mean": 0.0,
+          "Viol_iso_std": 0.0,
+          "Viol_weak_mean": 0.0056,
+          "Viol_weak_std": 0.0,
+          "FViol_mean": 0.0796,
+          "FViol_std": 0.0,
+          "Bloom_Smooth_mean": 0.1926,
+          "Bloom_Smooth_std": 0.0
+        }
+      },
+      "M=15": {
+        "w/o Topo & w/o Cog (Unconstrained GNN Greedy)": {
+          "SkillCov_mean": 0.3204,
+          "SkillCov_std": 0.0089,
+          "Viol_iso_mean": 0.0036,
+          "Viol_iso_std": 0.0029,
+          "Viol_weak_mean": 0.0424,
+          "Viol_weak_std": 0.0093,
+          "FViol_mean": 0.0057,
+          "FViol_std": 0.0031,
+          "Bloom_Smooth_mean": 1.2598,
+          "Bloom_Smooth_std": 0.0454
+        },
+        "Unbounded-GNN + TopoSort (T3 Unnormalized)": {
+          "SkillCov_mean": 0.9568,
+          "SkillCov_std": 0.0004,
+          "Viol_iso_mean": 0.009,
+          "Viol_iso_std": 0.0043,
+          "Viol_weak_mean": 0.0598,
+          "Viol_weak_std": 0.0075,
+          "FViol_mean": 0.0421,
+          "FViol_std": 0.0098,
+          "Bloom_Smooth_mean": 0.5643,
+          "Bloom_Smooth_std": 0.0335
+        },
+        "w/o Skill Prior (LightGCN + Topo + Cog)": {
+          "SkillCov_mean": 0.2784,
+          "SkillCov_std": 0.0068,
+          "Viol_iso_mean": 0.0,
+          "Viol_iso_std": 0.0,
+          "Viol_weak_mean": 0.0426,
+          "Viol_weak_std": 0.0064,
+          "FViol_mean": 0.0057,
+          "FViol_std": 0.0036,
+          "Bloom_Smooth_mean": 0.2671,
+          "Bloom_Smooth_std": 0.016
+        },
+        "w/o Cog (BG-GCN + Skill + Topo-Only)": {
+          "SkillCov_mean": 0.957,
+          "SkillCov_std": 0.0,
+          "Viol_iso_mean": 0.0,
+          "Viol_iso_std": 0.0,
+          "Viol_weak_mean": 0.0488,
+          "Viol_weak_std": 0.0036,
+          "FViol_mean": 0.0069,
+          "FViol_std": 0.0031,
+          "Bloom_Smooth_mean": 0.7433,
+          "Bloom_Smooth_std": 0.0238
+        },
+        "w/o Topo (BG-GCN + Skill + Cog-Only)": {
+          "SkillCov_mean": 0.957,
+          "SkillCov_std": 0.0,
+          "Viol_iso_mean": 0.0131,
+          "Viol_iso_std": 0.0034,
+          "Viol_weak_mean": 0.0467,
+          "Viol_weak_std": 0.0076,
+          "FViol_mean": 0.0098,
+          "FViol_std": 0.003,
+          "Bloom_Smooth_mean": 0.2052,
+          "Bloom_Smooth_std": 0.0018
+        },
+        "BG-TopoCog (Full Dual-Constrained)": {
+          "SkillCov_mean": 0.8119,
+          "SkillCov_std": 0.0009,
+          "Viol_iso_mean": 0.0,
+          "Viol_iso_std": 0.0,
+          "Viol_weak_mean": 0.0171,
+          "Viol_weak_std": 0.0053,
+          "FViol_mean": 0.0119,
+          "FViol_std": 0.0019,
+          "Bloom_Smooth_mean": 0.2152,
+          "Bloom_Smooth_std": 0.0013
+        }
+      },
+      "M=20": {
+        "w/o Topo & w/o Cog (Unconstrained GNN Greedy)": {
+          "SkillCov_mean": 0.3132,
+          "SkillCov_std": 0.006,
+          "Viol_iso_mean": 0.003,
+          "Viol_iso_std": 0.0021,
+          "Viol_weak_mean": 0.0446,
+          "Viol_weak_std": 0.0068,
+          "FViol_mean": 0.0049,
+          "FViol_std": 0.0023,
+          "Bloom_Smooth_mean": 1.2442,
+          "Bloom_Smooth_std": 0.0294
+        },
+        "Unbounded-GNN + TopoSort (T3 Unnormalized)": {
+          "SkillCov_mean": 0.9655,
+          "SkillCov_std": 0.0029,
+          "Viol_iso_mean": 0.0081,
+          "Viol_iso_std": 0.0029,
+          "Viol_weak_mean": 0.0558,
+          "Viol_weak_std": 0.0054,
+          "FViol_mean": 0.0482,
+          "FViol_std": 0.0058,
+          "Bloom_Smooth_mean": 0.643,
+          "Bloom_Smooth_std": 0.0361
+        },
+        "w/o Skill Prior (LightGCN + Topo + Cog)": {
+          "SkillCov_mean": 0.2774,
+          "SkillCov_std": 0.005,
+          "Viol_iso_mean": 0.0,
+          "Viol_iso_std": 0.0,
+          "Viol_weak_mean": 0.0419,
+          "Viol_weak_std": 0.0073,
+          "FViol_mean": 0.0051,
+          "FViol_std": 0.0027,
+          "Bloom_Smooth_mean": 0.2342,
+          "Bloom_Smooth_std": 0.0239
+        },
+        "w/o Cog (BG-GCN + Skill + Topo-Only)": {
+          "SkillCov_mean": 0.9677,
+          "SkillCov_std": 0.0,
+          "Viol_iso_mean": 0.0,
+          "Viol_iso_std": 0.0,
+          "Viol_weak_mean": 0.0233,
+          "Viol_weak_std": 0.0035,
+          "FViol_mean": 0.0158,
+          "FViol_std": 0.003,
+          "Bloom_Smooth_mean": 0.7347,
+          "Bloom_Smooth_std": 0.0093
+        },
+        "w/o Topo (BG-GCN + Skill + Cog-Only)": {
+          "SkillCov_mean": 0.9677,
+          "SkillCov_std": 0.0,
+          "Viol_iso_mean": 0.0068,
+          "Viol_iso_std": 0.0024,
+          "Viol_weak_mean": 0.0311,
+          "Viol_weak_std": 0.0034,
+          "FViol_mean": 0.0026,
+          "FViol_std": 0.0012,
+          "Bloom_Smooth_mean": 0.157,
+          "Bloom_Smooth_std": 0.0009
+        },
+        "BG-TopoCog (Full Dual-Constrained)": {
+          "SkillCov_mean": 0.6873,
+          "SkillCov_std": 0.0028,
+          "Viol_iso_mean": 0.0,
+          "Viol_iso_std": 0.0,
+          "Viol_weak_mean": 0.0146,
+          "Viol_weak_std": 0.0036,
+          "FViol_mean": 0.0026,
+          "FViol_std": 0.0011,
+          "Bloom_Smooth_mean": 0.166,
+          "Bloom_Smooth_std": 0.0059
+        }
+      }
+    }
+  },
+  "exp6_vocational_tracks": {
+    "1+X Web前端开发 (Web Frontend)": {
+      "seed_concept": "计算机系统",
+      "in_track_skill_coverage": 0.7882,
+      "prereq_violation_iso": 0.0,
+      "bloom_cognitive_smoothness": 0.3333,
+      "recommended_10step_path": [
+        {
+          "step": 1,
+          "concept_id": 15,
+          "concept_name": "操作系统",
+          "track_skill_weight": 6.839,
+          "bloom_level": 3,
+          "dag_indeg": 0
+        },
+        {
+          "step": 2,
+          "concept_id": 18,
+          "concept_name": "基本输入输出系统",
+          "track_skill_weight": 6.134,
+          "bloom_level": 3,
+          "dag_indeg": 0
+        },
+        {
+          "step": 3,
+          "concept_id": 8,
+          "concept_name": "计算机系统",
+          "track_skill_weight": 9.63,
+          "bloom_level": 5,
+          "dag_indeg": 0
+        },
+        {
+          "step": 4,
+          "concept_id": 4,
+          "concept_name": "数据网络",
+          "track_skill_weight": 2.031,
+          "bloom_level": 5,
+          "dag_indeg": 0
+        },
+        {
+          "step": 5,
+          "concept_id": 5,
+          "concept_name": "数据类型",
+          "track_skill_weight": 1.99,
+          "bloom_level": 5,
+          "dag_indeg": 0
+        },
+        {
+          "step": 6,
+          "concept_id": 514,
+          "concept_name": "下推自动机",
+          "track_skill_weight": 1.175,
+          "bloom_level": 5,
+          "dag_indeg": 0
+        },
+        {
+          "step": 7,
+          "concept_id": 283,
+          "concept_name": "垃圾收集器",
+          "track_skill_weight": 0.917,
+          "bloom_level": 5,
+          "dag_indeg": 0
+        },
+        {
+          "step": 8,
+          "concept_id": 11,
+          "concept_name": "网络体系结构",
+          "track_skill_weight": 8.747,
+          "bloom_level": 6,
+          "dag_indeg": 0
+        },
+        {
+          "step": 9,
+          "concept_id": 0,
+          "concept_name": "数据结构",
+          "track_skill_weight": 3.305,
+          "bloom_level": 6,
+          "dag_indeg": 0
+        },
+        {
+          "step": 10,
+          "concept_id": 1,
+          "concept_name": "服务数据单元",
+          "track_skill_weight": 2.533,
+          "bloom_level": 6,
+          "dag_indeg": 0
+        }
+      ]
+    },
+    "软考软件设计师 (Software Designer)": {
+      "seed_concept": "操作系统",
+      "in_track_skill_coverage": 0.6924,
+      "prereq_violation_iso": 0.0,
+      "bloom_cognitive_smoothness": 0.3333,
+      "recommended_10step_path": [
+        {
+          "step": 1,
+          "concept_id": 15,
+          "concept_name": "操作系统",
+          "track_skill_weight": 6.794,
+          "bloom_level": 3,
+          "dag_indeg": 0
+        },
+        {
+          "step": 2,
+          "concept_id": 18,
+          "concept_name": "基本输入输出系统",
+          "track_skill_weight": 6.094,
+          "bloom_level": 3,
+          "dag_indeg": 0
+        },
+        {
+          "step": 3,
+          "concept_id": 165,
+          "concept_name": "高可用集群",
+          "track_skill_weight": 1.234,
+          "bloom_level": 3,
+          "dag_indeg": 0
+        },
+        {
+          "step": 4,
+          "concept_id": 204,
+          "concept_name": "访问控制列表",
+          "track_skill_weight": 1.168,
+          "bloom_level": 3,
+          "dag_indeg": 0
+        },
+        {
+          "step": 5,
+          "concept_id": 357,
+          "concept_name": "AJAX异步通信",
+          "track_skill_weight": 1.157,
+          "bloom_level": 3,
+          "dag_indeg": 0
+        },
+        {
+          "step": 6,
+          "concept_id": 360,
+          "concept_name": "跨域资源共享",
+          "track_skill_weight": 1.125,
+          "bloom_level": 3,
+          "dag_indeg": 0
+        },
+        {
+          "step": 7,
+          "concept_id": 363,
+          "concept_name": "会话管理",
+          "track_skill_weight": 1.087,
+          "bloom_level": 3,
+          "dag_indeg": 0
+        },
+        {
+          "step": 8,
+          "concept_id": 8,
+          "concept_name": "计算机系统",
+          "track_skill_weight": 9.567,
+          "bloom_level": 5,
+          "dag_indeg": 0
+        },
+        {
+          "step": 9,
+          "concept_id": 11,
+          "concept_name": "网络体系结构",
+          "track_skill_weight": 8.689,
+          "bloom_level": 6,
+          "dag_indeg": 0
+        },
+        {
+          "step": 10,
+          "concept_id": 0,
+          "concept_name": "数据结构",
+          "track_skill_weight": 3.664,
+          "bloom_level": 6,
+          "dag_indeg": 0
+        }
+      ]
+    },
+    "1+X 大数据应用开发 (Big Data Dev)": {
+      "seed_concept": "数据网络",
+      "in_track_skill_coverage": 0.9885,
+      "prereq_violation_iso": 0.0,
+      "bloom_cognitive_smoothness": 0.3333,
+      "recommended_10step_path": [
+        {
+          "step": 1,
+          "concept_id": 15,
+          "concept_name": "操作系统",
+          "track_skill_weight": 2.656,
+          "bloom_level": 3,
+          "dag_indeg": 0
+        },
+        {
+          "step": 2,
+          "concept_id": 4,
+          "concept_name": "数据网络",
+          "track_skill_weight": 22.582,
+          "bloom_level": 5,
+          "dag_indeg": 0
+        },
+        {
+          "step": 3,
+          "concept_id": 5,
+          "concept_name": "数据类型",
+          "track_skill_weight": 22.125,
+          "bloom_level": 5,
+          "dag_indeg": 0
+        },
+        {
+          "step": 4,
+          "concept_id": 8,
+          "concept_name": "计算机系统",
+          "track_skill_weight": 3.741,
+          "bloom_level": 5,
+          "dag_indeg": 0
+        },
+        {
+          "step": 5,
+          "concept_id": 0,
+          "concept_name": "数据结构",
+          "track_skill_weight": 36.74,
+          "bloom_level": 6,
+          "dag_indeg": 0
+        },
+        {
+          "step": 6,
+          "concept_id": 1,
+          "concept_name": "服务数据单元",
+          "track_skill_weight": 28.164,
+          "bloom_level": 6,
+          "dag_indeg": 0
+        },
+        {
+          "step": 7,
+          "concept_id": 2,
+          "concept_name": "大数据",
+          "track_skill_weight": 23.089,
+          "bloom_level": 6,
+          "dag_indeg": 0
+        },
+        {
+          "step": 8,
+          "concept_id": 3,
+          "concept_name": "数据",
+          "track_skill_weight": 22.734,
+          "bloom_level": 6,
+          "dag_indeg": 0
+        },
+        {
+          "step": 9,
+          "concept_id": 10,
+          "concept_name": "数据完整性",
+          "track_skill_weight": 17.533,
+          "bloom_level": 6,
+          "dag_indeg": 0
+        },
+        {
+          "step": 10,
+          "concept_id": 11,
+          "concept_name": "网络体系结构",
+          "track_skill_weight": 3.398,
+          "bloom_level": 6,
+          "dag_indeg": 0
+        }
+      ]
+    }
+  }
+}

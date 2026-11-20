@@ -1,0 +1,9 @@
+* text=auto eol=lf
+*.png binary
+*.npy binary
+*.gz binary
+*.pt binary
+
+# Uncomment the lines below after installing git-lfs, if you choose to
+# version the 149 MB graph artifact instead of hosting it externally.
+# *.pt filter=lfs diff=lfs merge=lfs -text

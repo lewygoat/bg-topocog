@@ -1,0 +1,126 @@
+{
+  "baselines_warm_topk": {
+    "LightGCN (Backbone)": {
+      "NDCG@5": 0.14211,
+      "NDCG@10_mean": 0.1764,
+      "NDCG@10_std": 0.00035,
+      "NDCG@20": 0.20103,
+      "HR@10": 0.86483,
+      "MRR": 0.33121
+    },
+    "BG-GCN (Bounded Sigmoid, Ours)": {
+      "NDCG@5": 0.14168,
+      "NDCG@10_mean": 0.17342,
+      "NDCG@10_std": 0.00043,
+      "NDCG@20": 0.19842,
+      "HR@10": 0.86164,
+      "MRR": 0.32805
+    },
+    "BPR-MF": {
+      "NDCG@5": 0.13429,
+      "NDCG@10_mean": 0.17102,
+      "NDCG@10_std": 0.00129,
+      "NDCG@20": 0.19594,
+      "HR@10": 0.86153,
+      "MRR": 0.31838
+    },
+    "NGCF": {
+      "NDCG@5": 0.13225,
+      "NDCG@10_mean": 0.16927,
+      "NDCG@10_std": 0.00075,
+      "NDCG@20": 0.19416,
+      "HR@10": 0.86081,
+      "MRR": 0.31686
+    },
+    "Most-Popular": {
+      "NDCG@5": 0.12934,
+      "NDCG@10_mean": 0.16554,
+      "NDCG@10_std": 0.0,
+      "NDCG@20": 0.19048,
+      "HR@10": 0.8531,
+      "MRR": 0.31052
+    },
+    "KGAT": {
+      "NDCG@5": 0.12845,
+      "NDCG@10_mean": 0.1655,
+      "NDCG@10_std": 0.00085,
+      "NDCG@20": 0.19017,
+      "HR@10": 0.85532,
+      "MRR": 0.31002
+    },
+    "ConceptGCN": {
+      "NDCG@5": 0.12699,
+      "NDCG@10_mean": 0.16411,
+      "NDCG@10_std": 0.00133,
+      "NDCG@20": 0.18891,
+      "HR@10": 0.85483,
+      "MRR": 0.30833
+    },
+    "ACKRec": {
+      "NDCG@5": 0.12542,
+      "NDCG@10_mean": 0.16263,
+      "NDCG@10_std": 0.00381,
+      "NDCG@20": 0.18759,
+      "HR@10": 0.85224,
+      "MRR": 0.30588
+    }
+  },
+  "variants": {
+    "Dimension-Wise Vector Gate": {
+      "NDCG@10_mean": 0.16418,
+      "NDCG@10_std": 0.00084,
+      "converged_gate": 2.15,
+      "best_epoch": 7.2,
+      "gain_vs_unbounded_pct": -0.84,
+      "loss_recovery_pct": -12.8
+    },
+    "Unbounded-Gate GCN (T3)": {
+      "NDCG@10_mean": 0.16557,
+      "NDCG@10_std": 0.00116,
+      "converged_gate": 3.8,
+      "best_epoch": 4.0,
+      "gain_vs_unbounded_pct": 0.0,
+      "loss_recovery_pct": 0.0
+    },
+    "De-Biased Prior (No-BigData)": {
+      "NDCG@10_mean": 0.16612,
+      "NDCG@10_std": 0.00091,
+      "converged_gate": 3.42,
+      "best_epoch": 4.2,
+      "gain_vs_unbounded_pct": 0.33,
+      "loss_recovery_pct": 5.1
+    },
+    "In-Training L2 Projection": {
+      "NDCG@10_mean": 0.16984,
+      "NDCG@10_std": 0.00062,
+      "converged_gate": 1.42,
+      "best_epoch": 9.2,
+      "gain_vs_unbounded_pct": 2.58,
+      "loss_recovery_pct": 39.4
+    },
+    "Scalar Gate L2 Regularization": {
+      "NDCG@10_mean": 0.17268,
+      "NDCG@10_std": 0.00051,
+      "converged_gate": 0.412,
+      "best_epoch": 11.2,
+      "gain_vs_unbounded_pct": 4.29,
+      "loss_recovery_pct": 65.6
+    },
+    "Bounded Tanh Gate": {
+      "NDCG@10_mean": 0.17314,
+      "NDCG@10_std": 0.00049,
+      "converged_gate": 0.964,
+      "best_epoch": 11.2,
+      "gain_vs_unbounded_pct": 4.57,
+      "loss_recovery_pct": 69.9
+    },
+    "BG-GCN (Bounded Sigmoid, Ours)": {
+      "NDCG@10_mean": 0.17342,
+      "NDCG@10_std": 0.00044,
+      "converged_gate": 0.882,
+      "best_epoch": 11.2,
+      "gain_vs_unbounded_pct": 4.74,
+      "loss_recovery_pct": 72.5
+    }
+  }
+}
