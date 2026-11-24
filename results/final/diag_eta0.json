@@ -1,0 +1,42 @@
+[
+  {
+    "M": 10,
+    "variant": "Full",
+    "eta": 0.0,
+    "SkillCov": 0.8458505612777338,
+    "Viol_iso": 0.07962962962962962,
+    "Bloom_Smooth": 0.053703703703703705,
+    "paths_with_nonroot": 4,
+    "n_paths": 60
+  },
+  {
+    "M": 10,
+    "variant": "w/o Topo",
+    "eta": 0.0,
+    "SkillCov": 0.8437205594115788,
+    "Viol_iso": 0.00925925925925926,
+    "Bloom_Smooth": 0.05925925925925926,
+    "paths_with_nonroot": 60,
+    "n_paths": 60
+  },
+  {
+    "M": 20,
+    "variant": "Full",
+    "eta": 0.0,
+    "SkillCov": 0.8223536934124099,
+    "Viol_iso": 0.03771929824561404,
+    "Bloom_Smooth": 0.06578947368421052,
+    "paths_with_nonroot": 10,
+    "n_paths": 60
+  },
+  {
+    "M": 20,
+    "variant": "w/o Topo",
+    "eta": 0.0,
+    "SkillCov": 0.7660503238522345,
+    "Viol_iso": 0.0043859649122807015,
+    "Bloom_Smooth": 0.06228070175438597,
+    "paths_with_nonroot": 60,
+    "n_paths": 60
+  }
+]
